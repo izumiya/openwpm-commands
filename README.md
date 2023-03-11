@@ -19,3 +19,13 @@ After running the install script, activate your conda environment by running:
 ```bash
 conda activate openwpm
 ```
+
+## Quick Start
+
+To begin crawling, run the following command in your terminal:
+
+```bash
+python demo.py
+```
+
+Please note that you have 10 minutes until the process times out.
