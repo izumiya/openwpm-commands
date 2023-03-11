@@ -1,0 +1,21 @@
+# Django stuff:
+*.log
+*.pot
+
+# PyCharm
+.idea/*
+*.idea
+*/idea
+.Trash-0
+
+#VSCode
+.vscode
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# npm packages
+node_modules
+
+datadir
