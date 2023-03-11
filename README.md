@@ -29,3 +29,11 @@ python demo.py
 ```
 
 Please note that you have 10 minutes until the process times out.
+
+To stop the crawling process, enter the following script into the developer console of your crawler browser:
+
+```javascript
+document.getElementsByTagName('body')[0].appendChild(document.createElement('finish'))
+```
+
+This will append a new "finish" element to the end of the page, which will signal to the crawler that it should stop crawling.
