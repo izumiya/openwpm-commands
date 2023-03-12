@@ -59,7 +59,7 @@ manager_params.log_path = Path("./datadir/openwpm.log")
 # manager_params.process_watchdog = True
 
 
-# Commands time out by default after 60 seconds
+# Commands time out by default after 600 seconds
 with TaskManager(
     manager_params,
     browser_params,
@@ -82,9 +82,9 @@ with TaskManager(
         )
 
         # Start by visiting the page
-        command_sequence.append_command(GetCommand(url=site, sleep=3), timeout=60)
+        command_sequence.append_command(GetCommand(url=site, sleep=3), timeout=600)
         # Have a look at custom_command.py to see how to implement your own command
-        command_sequence.append_command(ManualOperationCommand())
+        command_sequence.append_command(ManualOperationCommand(timeout=600))
 
         # Run commands across all browsers (simple parallelization)
         manager.execute_command_sequence(command_sequence)

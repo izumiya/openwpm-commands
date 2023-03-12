@@ -22,8 +22,9 @@ from openwpm.socket_interface import ClientSocket
 class ManualOperationCommand(BaseCommand):
     """This command logs how many links it found on any given page"""
 
-    def __init__(self) -> None:
+    def __init__(self, timeout) -> None:
         self.logger = logging.getLogger("openwpm")
+        self.timeout = timeout
 
     # While this is not strictly necessary, we use the repr of a command for logging
     # So not having a proper repr will make your logs a lot less useful
@@ -40,4 +41,4 @@ class ManualOperationCommand(BaseCommand):
         extension_socket: ClientSocket,
     ) -> None:
         webdriver.execute_script('console.log("Run `document.getElementsByTagName(\'body\')[0].appendChild(document.createElement(\'finish\'))` to finish crawling")')
-        WebDriverWait(webdriver, timeout=600).until(lambda d: d.find_element(By.TAG_NAME, "finish"))
+        WebDriverWait(webdriver, timeout=self.timeout).until(lambda d: d.find_element(By.TAG_NAME, "finish"))
