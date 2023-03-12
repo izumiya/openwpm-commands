@@ -1,0 +1,9 @@
+name: openwpm-commands-analysis
+channels:
+- conda-forge
+- main
+dependencies:
+- ipykernel
+- jupyter
+- pip
+- ipython
