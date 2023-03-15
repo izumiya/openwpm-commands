@@ -1,0 +1,7 @@
+#!/bin/bash
+
+CONDA_ENV_NAME="@CONDA_ENV_NAME@"
+SCRIPT_PATH="@SCRIPT_PATH@"
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate "$CONDA_ENV_NAME"
+python "$SCRIPT_PATH"

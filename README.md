@@ -22,18 +22,20 @@ conda activate openwpm
 
 ## Quick Start
 
-To begin crawling, run the following command in your terminal:
+Follow these steps to begin crawling:
+
+In your terminal, run the following command to generate the runner.sh script:
 
 ```bash
-python demo.py
+./generate_runner.sh openwpm $(pwd)/main.py
 ```
 
-Please note that you have 10 minutes until the process times out.
+Start the crawling process by executing the runner.sh script:
 
-To stop the crawling process, enter the following script into the developer console of your crawler browser:
-
-```javascript
-document.getElementsByTagName('body')[0].appendChild(document.createElement('finish'))
+```bash
+./runner.sh
 ```
 
-This will append a new "finish" element to the end of the page, which will signal to the crawler that it should stop crawling.
+Please note that the process will time out after 10 minutes.
+
+To stop the crawling process manually, enter "about:finish" into the location bar of your crawler browser. This action will signal the crawler to stop crawling.
